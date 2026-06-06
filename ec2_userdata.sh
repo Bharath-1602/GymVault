@@ -23,7 +23,7 @@ apt-get install -y python3-pip python3-venv nginx git curl
 
 # 2. Clone repository code
 # REPLACE GITHUB_REPO_URL placeholder with your repository before launching
-GITHUB_URL="GITHUB_REPO_URL"
+GITHUB_URL="https://github.com/Bharath-1602/GymVault.git"
 
 if [ "$GITHUB_URL" = "GITHUB_REPO_URL" ] || [ -z "$GITHUB_URL" ]; then
     echo "⚠️ WARNING: GITHUB_REPO_URL not replaced! Defaulting to a placeholder directory."
