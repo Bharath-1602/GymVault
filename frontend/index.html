@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GymVault - Professional Gym Membership Management System. Manage members, plans, payments, and check-ins with AWS-powered cloud infrastructure.">
+    <meta name="keywords" content="gym management, membership, fitness, GymVault">
+    <meta name="author" content="GymVault">
+    <title>GymVault - Gym Membership Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GymVault Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- ═══ SIDEBAR ═══════════════════════════════════ -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-icon">🏋️</div>
+                <div class="sidebar-brand-text">
+                    <h1>GymVault</h1>
+                    <span>Management System</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Main Menu</span>
+
+                <div class="nav-item active" data-page="dashboard" onclick="navigateTo('dashboard')" id="nav-dashboard">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-label">Dashboard</span>
+                </div>
+
+                <div class="nav-item" data-page="members" onclick="navigateTo('members')" id="nav-members">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-label">Members</span>
+                </div>
+
+                <div class="nav-item" data-page="plans" onclick="navigateTo('plans')" id="nav-plans">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="nav-label">Plans</span>
+                </div>
+
+                <div class="nav-item" data-page="payments" onclick="navigateTo('payments')" id="nav-payments">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span class="nav-label">Payments</span>
+                </div>
+
+                <div class="nav-item" data-page="checkin" onclick="navigateTo('checkin')" id="nav-checkin">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="nav-label">Check-In</span>
+                </div>
+
+                <span class="sidebar-nav-label">System</span>
+
+                <div class="nav-item" data-page="aws" onclick="navigateTo('aws')" id="nav-aws">
+                    <i class="fas fa-cloud"></i>
+                    <span class="nav-label">AWS Panel</span>
+                </div>
+
+                <div class="nav-item" data-page="settings" onclick="navigateTo('settings')" id="nav-settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label">Settings</span>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-dot-row" id="sidebar-status-dots">
+                    <div class="status-dot-item"><div class="status-dot red" id="dot-mongo"></div>DB</div>
+                    <div class="status-dot-item"><div class="status-dot red" id="dot-s3"></div>S3</div>
+                    <div class="status-dot-item"><div class="status-dot red" id="dot-kms"></div>KMS</div>
+                    <div class="status-dot-item"><div class="status-dot red" id="dot-sns"></div>SNS</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ═══ MAIN CONTENT ══════════════════════════════ -->
+        <main class="main-content" id="main-content">
+            <!-- Content injected by JavaScript -->
+        </main>
+    </div>
+
+    <!-- ═══ MODAL OVERLAY ═════════════════════════════════ -->
+    <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal" id="modal-container">
+            <!-- Modal content injected by JavaScript -->
+        </div>
+    </div>
+
+    <!-- ═══ TOAST CONTAINER ═══════════════════════════════ -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- GymVault App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
